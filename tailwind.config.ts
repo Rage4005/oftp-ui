@@ -57,6 +57,15 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        retro: {
+          purple: "#372468",
+          darkPurple: "#100D23",
+          mediumPurple: "#3E3855",
+          yellow: "#FFFC58",
+          green: "#00FF9C",
+          pink: "#EE6DE1",
+          lavender: "#958BFF",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -84,6 +93,9 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      fontFamily: {
+        roboto: ["Roboto", "-apple-system", "Roboto", "Helvetica", "sans-serif"],
       },
     },
   },
