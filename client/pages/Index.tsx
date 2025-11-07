@@ -109,34 +109,51 @@ export default function Index() {
       <div className="absolute bottom-0 left-0 right-0 z-20">
         <div className="h-12 bg-retro-darkPurple" />
         
-        <div className="h-12 bg-retro-mediumPurple flex items-center justify-between px-4">
+        <div className="h-12 bg-retro-mediumPurple flex items-center justify-between px-4 gap-2 md:gap-4">
           <div className="flex items-center gap-3">
             <svg width="20" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M8.31546 2.77763L0.252454 4.59049L0.867506 11.3752L9.02779 10.6354L8.31546 2.77763ZM1.55682 18.979L9.8224 19.4007L9.09844 11.4147L0.938152 12.1545L1.55682 18.979ZM10.0078 11.4352L10.7599 19.3722L21.724 19.9183L20.8657 10.4509L10.0078 11.4352ZM19.9183 0L9.26547 2.52709L9.98932 10.5118L20.7826 9.53341L19.9183 0Z" fill="#00FF9C"/>
             </svg>
-            
+
             <div className="flex items-center gap-2">
               <svg width="26" height="28" viewBox="0 0 26 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 26.5L10.486 15.506M8 9.5C8 11.7543 8.89553 13.9163 10.4896 15.5104C12.0837 17.1045 14.2457 18 16.5 18C18.7543 18 20.9163 17.1045 22.5104 15.5104C24.1045 13.9163 25 11.7543 25 9.5C25 7.24566 24.1045 5.08365 22.5104 3.48959C20.9163 1.89553 18.7543 1 16.5 1C14.2457 1 12.0837 1.89553 10.4896 3.48959C8.89553 5.08365 8 7.24566 8 9.5Z" stroke="#958BFF" strokeWidth="2" strokeLinecap="round"/>
               </svg>
-              <span className="text-retro-lavender text-sm font-roboto hidden sm:block">
+              <span className="text-retro-lavender text-xs md:text-sm font-roboto hidden sm:block">
                 검색하려면 여기에 입력하십시오.
               </span>
             </div>
           </div>
 
-          <div className="flex items-center gap-4 md:gap-6">
+          <div className="flex items-center gap-1.5 md:gap-3">
+            {socialLinks.map((social, index) => (
+              <a
+                key={index}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:scale-110 transition-transform duration-200 flex-shrink-0"
+                aria-label={social.name}
+              >
+                <div className="w-5 h-5 md:w-6 md:h-6">
+                  {social.icon}
+                </div>
+              </a>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-2 md:gap-4">
             <div className="hidden lg:flex items-center gap-4">
               <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 13.3289V6.66992C1 6.02416 1.448 5.49991 2 5.49991H5.586C5.71833 5.49938 5.8492 5.4687 5.97071 5.40973C6.09222 5.35076 6.20185 5.26471 6.293 5.15678L9.293 1.34523C9.923 0.607216 11 1.13035 11 2.17324V17.8267C11 18.8775 9.91 19.3961 9.284 18.6435L6.294 14.8533C6.20259 14.7423 6.09185 14.6536 5.96867 14.5928C5.84549 14.5321 5.7125 14.5005 5.578 14.5H2C1.448 14.5 1 13.9758 1 13.3289Z" stroke="#EE6DE1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 <path d="M15 6.06242C16.333 8.06269 16.333 11.9372 15 13.9375" stroke="#EE6DE1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 <path d="M18 2.12487C21.988 6.40893 22.012 13.6191 18 17.8751" stroke="#EE6DE1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-              
+
               <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M15 0C15.7956 0 16.5587 0.316071 17.1213 0.87868C17.6839 1.44129 18 2.20435 18 3V4H19C19.2652 4 19.5196 4.10536 19.7071 4.29289C19.8946 4.48043 20 4.73478 20 5V7C20 7.26522 19.8946 7.51957 19.7071 7.70711C19.5196 7.89464 19.2652 8 19 8H18V9C18 9.79565 17.6839 10.5587 17.1213 11.1213C16.5587 11.6839 15.7956 12 15 12H3C2.20435 12 1.44129 11.6839 0.87868 11.1213C0.316071 10.5587 0 9.79565 0 9V3C0 2.20435 0.316071 1.44129 0.87868 0.87868C1.44129 0.316071 2.20435 0 3 0H15ZM12 3H4C3.73478 3 3.48043 3.10536 3.29289 3.29289C3.10536 3.48043 3 3.73478 3 4V8C3 8.26522 3.10536 8.51957 3.29289 8.70711C3.48043 8.89464 3.73478 9 4 9H12C12.2652 9 12.5196 8.89464 12.7071 8.70711C12.8946 8.51957 13 8.26522 13 8V4C13 3.73478 12.8946 3.48043 12.7071 3.29289C12.5196 3.10536 12.2652 3 12 3Z" fill="#EE6DE1"/>
               </svg>
-              
+
               <svg width="14" height="20" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M14 20H11.9269L9.64899 13.6483H4.35101L2.09872 20H0L6.9872 0L14 20ZM6.9872 6.19423L5.01645 11.811H8.98355L6.9872 6.19423Z" fill="#EE6DE1"/>
               </svg>
@@ -154,20 +171,6 @@ export default function Index() {
         </div>
       </div>
 
-      <div className="absolute bottom-32 left-1/2 transform -translate-x-1/2 flex flex-wrap justify-center items-center gap-3 md:gap-4 z-10 px-4">
-        {socialLinks.map((social, index) => (
-          <a 
-            key={index} 
-            href={social.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:scale-110 transition-transform duration-200"
-            aria-label={social.name}
-          >
-            {social.icon}
-          </a>
-        ))}
-      </div>
     </div>
   );
 }
