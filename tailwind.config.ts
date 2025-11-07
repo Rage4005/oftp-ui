@@ -95,7 +95,13 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       fontFamily: {
-        roboto: ["Roboto", "-apple-system", "Roboto", "Helvetica", "sans-serif"],
+        roboto: [
+          "Roboto",
+          "-apple-system",
+          "Roboto",
+          "Helvetica",
+          "sans-serif",
+        ],
       },
     },
   },
